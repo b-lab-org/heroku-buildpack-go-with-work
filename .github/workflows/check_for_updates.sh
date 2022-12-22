@@ -7,12 +7,11 @@ if [[ "${REMOTE}" != *"${UPSTREAM}"* ]]; then
     git remote add upstream "${UPSTREAM}"
 fi
 
-git fetch upstream
-git pull origin main:upstream 1> /dev/null
+OLD_COMMIT=$(git rev-parse @{u})
+git pull upstream main 1> /dev/null
+LATEST_COMMIT=$(git rev-parse @{u})
 
-if [[ "$(git status --porcelain)" ]]; then
-    LATEST_COMMIT=$(git rev-parse @{u})
-
+if [[ "${OLD_COMMIT}" != "${LATEST_COMMIT}" ]]; then
     git add .
     git commit -m "Github action - New upstream heroku buildpack changes - ${LATEST_COMMIT}"
     gh pr create \
