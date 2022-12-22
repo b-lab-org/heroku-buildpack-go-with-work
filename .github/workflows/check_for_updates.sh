@@ -15,7 +15,10 @@ if [[ "$(git status --porcelain)" ]]; then
 
     git add .
     git commit -m "Github action - New upstream heroku buildpack changes - ${LATEST_COMMIT}"
-    gh pr create --title "New upstream heroku buildpack changes - ${LATEST_COMMIT}" --body "Most recent upstream changes"
+    gh pr create \
+        --base origin \
+        --title "New upstream heroku buildpack changes - ${LATEST_COMMIT}" \
+        --body "Most recent upstream changes"
 else
     echo "repo is up to date with remote"
 fi

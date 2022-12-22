@@ -1,0 +1,31 @@
+name: Daily buildpack check
+on:
+  workflow_dispatch:
+  schedule:
+    # 4:00 am UTC = 12:00 PM EST
+    - cron: "0 16 * * *"
+
+jobs:
+  build:
+    name: Daily buildpack check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # Used by the `gh pr` command inside of ./.github/workflows/check_for_updates.sh
+      GITHUB_TOKEN: "${{ secrets.GHP_FOR_GITHUB_ACTIONS }}"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Buildpack check
+        run: |
+          ./.github/workflows/check_for_updates.sh
+
+      - name: Slack Post On Error
+        if: ${{ failure() }}
+        run: |
+          curl -f --silent -X POST -H 'Content-Type: application/json' \
+            -d '{"text": "Daily buildpack check PR failed"}' \
+            "${{ secrets.CROWDIN_SLACK_WEBHOOK }}"
