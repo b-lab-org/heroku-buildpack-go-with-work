@@ -494,8 +494,6 @@ case "${TOOL}" in
         step "Determining packages to install"
         pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); }}' ${goMOD})}
 
-        step "current pkgs are ${pkgs}" 
-
         if [ -z "${pkgs}" ]; then
             pkgs=$(mainPackagesInModule)
             if [ -z "${pkgs}" ]; then
@@ -538,8 +536,6 @@ case "${TOOL}" in
             bin/go-pre-compile
         fi
 
-        step "pkgs before install ${pkgs}"
-
         installPkgs
 
         if [[ -f bin/go-post-compile ]]; then
@@ -568,7 +564,8 @@ case "${TOOL}" in
         fi
 
         step "Determining packages to install"
-        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); exit }}' ${goWork})}
+        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); }}' ${goWork})}
+        
         if [ -z "${pkgs}" ]; then
             pkgs=$(mainPackagesInModule)
             if [ -z "${pkgs}" ]; then
