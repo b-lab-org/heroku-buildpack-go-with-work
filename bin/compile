@@ -383,7 +383,6 @@ setupGOPATH() {
 }
 
 installPkgs() {
-    step "current packages are ${pkgs}"
     for pkg in ${pkgs}; do
         step "Running: go install -v ${FLAGS[@]} ${pkg}"
         go install -v "${FLAGS[@]}" ${pkg} 2>&1
