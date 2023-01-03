@@ -383,8 +383,10 @@ setupGOPATH() {
 }
 
 installPkgs() {
-    step "Running: go install -v ${FLAGS[@]} ${pkgs}"
-    go install -v "${FLAGS[@]}" ${pkgs} 2>&1
+    for pkg in ${pkgs}; do
+        step "Running: go install -v ${FLAGS[@]} ${pkg}"
+        go install -v "${FLAGS[@]}" ${pkg} 2>&1
+    done
 }
 
 loadEnvDir "${env_dir}"
@@ -489,7 +491,8 @@ case "${TOOL}" in
         fi
 
         step "Determining packages to install"
-        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); exit }}' ${goMOD})}
+        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); }}' ${goMOD})}
+
         if [ -z "${pkgs}" ]; then
             pkgs=$(mainPackagesInModule)
             if [ -z "${pkgs}" ]; then
@@ -560,7 +563,8 @@ case "${TOOL}" in
         fi
 
         step "Determining packages to install"
-        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); exit }}' ${goWork})}
+        pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); }}' ${goWork})}
+        
         if [ -z "${pkgs}" ]; then
             pkgs=$(mainPackagesInModule)
             if [ -z "${pkgs}" ]; then

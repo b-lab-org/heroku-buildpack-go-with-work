@@ -874,7 +874,8 @@ testGlideMassageVendor() {
   assertCaptured "Installing go"
   assertCaptured "Installing glide"
   assertCaptured "Fetching any unsaved dependencies (glide install)"
-  assertCaptured "Running: go install -v -tags heroku . github.com/heroku/fixture/vendor/github.com/mattes/migrate"
+  assertCaptured "Running: go install -v -tags heroku ."
+  assertCaptured "Running: go install -v -tags heroku github.com/heroku/fixture/vendor/github.com/mattes/migrate"
   assertCaptured "github.com/heroku/fixture"
   assertCaptured "github.com/heroku/fixture/vendor/github.com/fatih/color/vendor/github.com/mattn/go-colorable"
   assertCaptured "github.com/heroku/fixture/vendor/github.com/fatih/color/vendor/github.com/mattn/go-isatty"
@@ -1051,7 +1052,7 @@ testGodepBasicGo14() {
   assertBuildDirFileExists ".profile.d/concurrency.sh"
 }
 
-testGodepCGOVendored(){
+testGodepCGOVendored() {
   fixture "godep-cgo-vendored"
 
   env "CGO_CFLAGS" '-I${build_dir}/vendor/include'
@@ -1076,8 +1077,9 @@ testGodepMassageVendor() {
   compile
   assertCaptured "Checking Godeps/Godeps.json file."
   assertCaptured "Installing go"
-  assertCaptured "Running: go install -v -tags heroku . github.com/heroku/fixture/vendor/github.com/mattes/migrate"
+  assertCaptured "Running: go install -v -tags heroku ."
   assertCaptured "github.com/heroku/fixture"
+  assertCaptured "Running: go install -v -tags heroku github.com/heroku/fixture/vendor/github.com/mattes/migrate"
   assertCaptured "github.com/heroku/fixture/vendor/github.com/mattn/go-isatty"
   assertCaptured "github.com/heroku/fixture/vendor/github.com/shiena/ansicolor"
   assertCaptured "github.com/heroku/fixture/vendor/github.com/fatih/color"
@@ -1253,7 +1255,7 @@ testGodepLDSymbolValue() {
   assertCapturedSuccess
   assertCompiledBinaryExists
   assertCompiledBinaryOutputs "fixture" "fixture"
-#  assertTrue "Binary has the right value" '[ "$(${compile_dir}/bin/fixture)" = "fixture" ]'
+  #  assertTrue "Binary has the right value" '[ "$(${compile_dir}/bin/fixture)" = "fixture" ]'
 }
 
 # # Older versions of Go have a different format for specifying linked flags
