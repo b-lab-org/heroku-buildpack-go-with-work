@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euox pipefail
 
 UPSTREAM="https://github.com/heroku/heroku-buildpack-go.git"
 REMOTE=$(git remote -v)
@@ -8,6 +8,7 @@ if [[ "${REMOTE}" != *"${UPSTREAM}"* ]]; then
 fi
 
 OLD_COMMIT=$(git rev-parse @{u})
+git fetch --all
 git pull upstream main 1> /dev/null
 LATEST_COMMIT=$(git rev-parse @{u})
 
