@@ -12,7 +12,6 @@
 * go1.18 defaults to go1.18.10
 
 ## v169 (2022-11-09)
-
 * Add go1.19.2, and go1.19.3
 * Add go1.18.4, go1.18.5, go1.18.7, and go1.18.8
 * Add go1.17.11, go1.17.12, and go1.17.13
@@ -21,7 +20,6 @@
 * go1.17 defaults to go1.17.13
 
 ## v168 (2022-09-08)
-
 * Add go1.19
 * Add go1.19.1
 * Add go1.18.6
@@ -29,26 +27,21 @@
 * go1.19 defaults to 1.19.1
 
 ## v166 (2022-06-15)
-
 * Re-release of the changes in v164.
 
 ## v165 (2022-06-14)
-
 * Temporary rollback of the v164 release.
 
 ## v164 (2022-06-14)
-
 * Adjust curl retry and connection timeout handling
 * Switch to the recommended regional S3 domain instead of the global one
 
 ## v163 (2022-06-09), v167 (published by mistake 2022-09-08)
-
 * Use the go version in `go.mod` if no `+heroku` comment is found (#378/#411)
 * Add go1.18.3
 * go1.18 defaults to 1.18.3
 
 ## v162 (2022-03-23)
-
 * Add go1.17.9
 * Add go1.17.10
 * Add go1.18.1
@@ -58,7 +51,6 @@
 * Add Heroku-22 to the Circle CI test matrix.
 
 ## v161 (2022-03-15)
-
 * Add go1.15.11
 * Add go1.15.12
 * Add go1.15.13
@@ -81,35 +73,28 @@
 * go1.15 defaults to 1.15.15
 
 ## v160 (2021-11-30)
-
 * Stop suppressing error output from `go list`
 * Document how to install additional tools with go modules
 
 ## v159 (2021-11-30)
-
 * Republish v157 (with missing binaries)
 
 ## v158 (2021-11-30)
-
 * Rollback v157 to v156 (binaries were missing)
 
 ## v157 (2021-11-30)
-
 * Add go1.16.10, use for go1.16
 * Add go1.17.3, use for go1.17
 
 ## v156 (2021-10-11)
-
 * Add go1.16.9, use for go1.16
 * Add go1.17.2, use for go1.17
 
 ## v155 (2021-09-13)
-
 * Add go1.16.8, use for go1.16
 * Add go1.17.1, use for go1.17
 
 ## v154 (2021-08-18)
-
 * Add go1.17
 * Add go1.16.7, use for go1.16
 * Add go 1.16.6
@@ -121,12 +106,10 @@
 * Drop Heroku-16 from CI test matrix
 
 ## v153 (2021-03-11)
-
 * Add go1.16.1, use for go1.16
 * Add go1.15.9, use for go1.15
 
 ## v152 (2021-02-17)
-
 * Drop cedar-14 from test matrix
 * Remove skipping of tests on cedar-14
 * Update Makefile's default IMAGE to heroku/heroku:20-build
@@ -136,16 +119,13 @@
 * Add go1.15.8, use for go1.15
 
 ## v151 (2021-02-01)
-
 * Add go1.16rc1, use for go1.16
 
 ## v150 (2021-01-21)
-
 * Add go1.14.14, use for go1.14
 * Add go1.15.7, use for go1.15
 
 ## v149 (2020-12-07)
-
 * Add go1.14.11
 * Add go1.15.4
 * Add go1.14.12
@@ -154,59 +134,49 @@
 * Add go1.15.6, use for go1.15
 
 ## v148 (2020-10-19)
-
 * Add go1.14.10, use for go1.14
 * Add go1.15.3, use for go1.15
 
 ## v147 (2020-09-15)
-
 * *GoModules* Private proxy support via `GOPROXY`, `GOPRIVATE`, and `GONOPROXY`
 * Add go1.14.9, use for go1.14
 * Add go1.15.2, use for go1.15
 
 ## v146 (2020-09-08)
-
 * Update glide-with-hg-dep test fixture to use a new dependency, bitbucket.org/pkg/inflect is gone
 * Add go1.14.8, use for go1.14
 * Add go1.15.1, use for go1.15
 
 ## v145 (2020-08-18)
-
 * Switch `heroku-buildpack-go`'s default branch from `master` to `main`.
 * Add go1.13.15, use for go1.13
 * Add go1.14.7, use for go1.14
 * Add go1.15
 
 ## v144 (2020-07-17)
-
 * Add go1.13.13
 * Add go1.14.5
 * Add go1.13.14, use for go1.13
 * Add go1.14.6, use for go1.14
 
 ## v143 (2020-06-08)
-
 * Add go1.13.11
 * Add go1.14.3
 * Add go1.13.12, use for go1.13
 * Add go1.14.4, use for go1.14
 
 ## v142 (2020-04-27)
-
 * Set GOPATH earlier when using modules, which fixes issues when using Heroku CI
 
 ## v141 (2020-04-21)
-
 * Add Heroku-20 to the Travis test matrix
 * Add go1.13.10, use for go1.13
 * Add go1.14.2, use for go1.14
 
 ## v140 (2020-04-16)
-
 * Only pass -mod=vendor to `go list` if a vendor directory is present (#394)
 
 ## v139 (2020-03-23)
-
 * Update shunit2
 * sbin/sync-files.sh: verify checksums serially
 * Add go1.12.17, use for go1.12 and as the default
@@ -214,14 +184,12 @@
 * Add go1.14.1, use for go1.14
 
 ## v138 (2020-03-13)
-
 * Add go1.13.8
 * Add go1.14
 * Expand go1.13 to go1.13.8
 * Expand go1.14 to go1.14
 
 ## v137 (2020-02-19)
-
 * Add go1.12.15 and go1.12.16
 * Add go1.13.6 and go1.13.7
 * Add go1.14rc1
@@ -230,7 +198,6 @@
 * Expand go1.14 to go1.14rc1
 
 ## v136 (2019-12-16)
-
 * Add go1.12.13
 * Add go1.13.4
 * Add go1.13.5, use for go1.13
@@ -239,11 +206,9 @@
 * Remove duplicate deploy docs.
 
 ## v135 (2019-12-03)
-
 * Same as 134, which looks like a misfire.
 
 ## v134 (2019-10-22)
-
 * Add go1.13.3, use for go1.13
 * Add go1.12.12, expand go1.12 to go1.12.12, and default to go1.12.12
 * Add go1.13.2, use for go1.13
@@ -251,114 +216,90 @@
 * Remove hg and bzr installation as they are now part of the heroku-16 and heroku-18 build images.
 
 ## v131 (2019-10-15) (and v132/v133)
-
 * Bump golangci-lint to v1.20.0
 
 ## v130 (2019-09-26)
-
 * Add go1.13.1, use for go1.13
 * Add go1.12.10, expand go1.12 to go1.12.10, and default to go1.12.10
 
 ## v129 (2019-09-05)
-
 * Add go1.13rc2, use for go1.13
 * Add go1.13, use for go1.13
 * Bump Glide to 0.13.3
 
 ## v128 (2019-08-27)
-
 * Download and install bzr when modules are in use.
 * Add go1.12.9, expand go1.12 to go1.12.9, and default to go1.12.9
 * Add go1.11.13, expand go1.11 to go1.11.13
 * Add go1.13rc1, expand go1.13 to go1.13rc1
 
 ## v127 (2019-08-15)
-
 * Add go1.12.8, expand go1.12 to go1.12.8, and default to go1.12.8
 
 ## v126 (2019-07-10)
-
 * Set the public bit on files uploaded by ./sbin/sync-files.sh so that the files are publicly available.
 
 ## v125 (2019-07-10)
-
 * Rollback to v119
 
 ## v124 (2019-07-10)
-
 * Rollback attempt
 
 ## v123 (2019-07-10)
-
 * Rollback attempt
 
 ## v122 (2019-07-09)
-
 * Add go1.12.7, expand go1.12 to go1.12.7, and default to go1.12.7
 * Add go1.11.12 and expand go1.11 to go 1.11.12
 
 ## v121 (2019-07-09)
-
 * Botched release
 
 ## v120 (2019-07-09)
-
 * Botched release
 
 ## v119 (2019-06-27)
-
 * Add go1.13beta1 and make it the default when go1.13 is specified
 
 ## v118 (2019-06-21)
-
 * Add -r to xargs so that xargs doesn't run commands when there is no input.
 
 ## v117 (2019-06-17)
-
 * Add go1.12.6, expand go1.12 to go1.12.6, and default to go1.12.6
 * Add go1.11.11 and expand go1.11 to go1.11.11
 
 ## v116 (2019-05-14)
-
 * *Dep* Dep bumped to v0.5.2. Dep v0.5.1 & v0.5.0 also made available.
 
 ## v115 (2019-05-09)
-
 * Cleanup how the stdlib is sourced.
 
 ## v114 (2019-05-07)
-
 * *GoModules* Make read-only module files writable so they can be deleted during cache cleaning on Go version upgrade.
 
 ## v113 (2019-05-07)
-
 * *GoModules* *TestPack* When .golangci.{yml,toml,json} exist run `golangci-lint -v --build-tags heroku run` during test. Use your .golangci.{yml,toml,json} to configure golangci-lint.
 * Add go1.12.5, expand go1.12 to go1.12.5, and default to go1.12.5
 * Add go1.11.10 and expand go1.11 to go1.11.10
 
 ## v112 (2019-04-30)
-
 * *GoModules* When no Procfile exists and only a single main package exists, setup the resulting executable as the web process type.
 * *GoModules* When no Procfile exists and multiple main packages exist, setup the resulting executables as process types of the same name.
 * *GoModules* This means that a main package in a `web` directory will be setup as the web process type, a package in a `worker` directory will be setup as the worker process type, etc.
 
 ## v111 (2019-04-18)
-
 * *GoModules* Set GOPATH to capture downloaded dependencies.
 
 ## v110 (2019-04-15)
-
 * Add go1.12.4, expand go1.12 to go1.12.4, and default to go1.12.4
 * Add go1.11.9 and expand go1.11 to go1.11.9
 * Restore vendored mattes migrate teset on cedar:14 (finally fixed in ^)
 
 ## v109 (2019-04-09)
-
 * Add go1.12.3, expand go1.12 to go1.12.3, and default to go1.12.3
 * Add go1.11.8 and expand go1.11 to go1.11.8
 
 ## v108 (2019-04-08)
-
 * *GoModules* Handle quoted module names in go.mod
 * Add go1.12.2, expand go1.12 to go1.12.2, and default to go1.12.2
 * Add go1.11.7 and expand go1.11 to go1.11.7
@@ -367,45 +308,37 @@
 * Skip vendored mattes migrate compile on cedar:14 due to gcc error.
 
 ## v107 (2019-04-02)
-
 * Handle non files in bin/ (symlinks, directories, etc) when diffing to determine contents of bin/
 
 ## v106 (2019-04-01)
-
 * *GoModules* Fixed flag handling, which has been broken since -mod=vendor was added (at least)
 * *GoModules* Detect main packages in the repo and install them when there isn't a specified package spec.
 * Only list the contents of bin/ that were installed/modified by the buildpack, instead of everything in bin/
 * Small updates to the readme
 
 ## v105 (2019-03-18)
-
 * Add go1.12.1 & go1.11.6
 * Default to go1.12.1
 * If ./cmd exists and no package spec is set, then set package spec to ./cmd/...
 
 ## v104 (2019-03-11)
-
 * *GoModules* Fix up Go modules testing to include mod=vendor or mod=readonly and set GOPATH to a temporary directory so downloaded deps' tests aren't executed.
 * Move publish script to /sbin/publish / don't push to master since it's disabled.
 * Add Codeowners to automate PR reviews.
 
 ## v103 (2019-03-07)
-
 * Removed warnings on command line
 * Added info about compiled binaries
 
 ## v102 (2019-03-01)
-
 * Add go1.12 and default to it when go1.12 is specified.
 * Add go1.12 to the list of supported versions.
 * Deprecate go1.10*
 
 ## v101 (2019-02-21)
-
 * Track count of go versions being deployed
 
 ## v100 (2019-02-12)
-
 * Add go1.10.8 and default to it when go1.10 is specified
 * Add go1.11.5 and default to it when go1.11 is specified or no version is specified.
 * *GoModules* Support go modules on Heroku CI (bin/test-compile & bin/test).
@@ -413,62 +346,51 @@
 * Add go1.12rc1 and default to it when go1.12 is specified.
 
 ## v99 (2019-01-15)
-
 * Add go1.12beta1 and default to it when go1.12 is specified
 * Add go1.12beta2 and default to it when go1.12 is specified
 
 ## v98 (2018-12-18)
-
 * Fix git Credential Helper for go module use (missing brackets) - @chrisroberts
 * Fix dep help text for package install - @andrewslotin
 * Add go1.11.3 & go1.11.4 using go1.11.4 as the default for go1.11
 * Add go1.10.6 & go1.10.7 using go1.10.7 as the default for go1.10
 
 ## v97 (2018-11-05)
-
 * Re-apply v95
 
 ## v96 (2018-11-05)
-
 * Rollback
 
 ## v95 (2018-11-05)
-
 * Add go1.11.2, use it as the default for go1.11
 * Add go1.10.5, use it as the default for go1.10
 
 ## v94 (2018-10-19)
-
 * Remove the need for Procfiles in simple situations for go modules
 * Add go1.11.1, use it as the default for go1.11
 * Promote go1.11.1 as the default install
 * Deprecate go1.9.X
 
 ## v93 (2018-08-30)
-
 * Be clearer about what version of go is chosen if none is specified. Addresses #266.
 * Handle version stuff in the right place for go modules.
 
 ## v92 (2018-08-27)
-
 * Add go1.11 and mark it as supported
 * Add go1.10.4 and make it the default, supported version
 
 ## v91 (2018-08-24)
-
 * Add go1.11rc2 (unsupported) for experimenters
 * Add basic support for go modules (unsupported) for experimenters
 * Adds support for Golang Migrate (github.com/golang-migrate/migrate) as an additional tool
 * Deprecates support for Mattes Migrate (is now Golang Migrate)
 
 ## v90 (2018-08-16)
-
 * Add go1.11beta1 (unsupported) for experimenters
 * Add go1.11beta2 (unsupported) for experimenters
 * Add go1.11rc1 (unsupported) for experimenters
 
 ## v89 (2018-06-12)
-
 * GOCACHE support
 
 ## v88 (2018-06-12)
