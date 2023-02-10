@@ -9,7 +9,7 @@ fi
 
 OLD_COMMIT=$(git rev-parse @{u})
 git fetch --all
-git pull upstream main 1> /dev/null
+git pull -s recursive -X theirs upstream main 1> /dev/null
 LATEST_COMMIT=$(git rev-parse @{u})
 
 if [[ "${OLD_COMMIT}" != "${LATEST_COMMIT}" ]]; then
